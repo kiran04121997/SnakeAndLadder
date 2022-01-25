@@ -8,12 +8,13 @@ namespace SnakeAndLadderProject
 {
     internal class SnakeAndLadder
     {
-       
-            public const int NO_PLAY = 0, SNAKE = 1, LADDER = 2;
-            public int StartPoint = 0;
-            public int DiceRoll;
-            int Option = 0;
-            public void StartPlaying()
+        public const int NO_PLAY = 0, SNAKE = 1, LADDER = 2, WINNING = 100;
+        public int StartPoint = 0;
+        public int DiceRoll;
+        int Option = 0;
+        public void StartPlaying()
+        {
+            while (this.StartPoint < 100)
             {
                 Random Random = new Random();
                 DiceRoll = Random.Next(1, 7);
@@ -37,7 +38,15 @@ namespace SnakeAndLadderProject
                         Console.WriteLine("Invalid Option");
                         break;
                 }
+                if (StartPoint < 0)
+                {
+                    StartPoint = 0;
+                }
             }
 
+
+
+
+        }
     }
 }
