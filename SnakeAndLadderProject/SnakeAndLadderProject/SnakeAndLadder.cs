@@ -21,7 +21,7 @@ namespace SnakeAndLadderProject
                 Console.WriteLine("player Roll  Dice number is:" + " " + DiceRoll);
                 Option = Random.Next(0, 3);
                 Console.WriteLine("Dice value:" + Option);
-                switch (Option)
+              switch (Option)
                 {
                     case NO_PLAY:
                         Console.WriteLine("No Play");
@@ -38,15 +38,11 @@ namespace SnakeAndLadderProject
                         Console.WriteLine("Invalid Option");
                         break;
                 }
-                if (StartPoint < 0)
-                {
-                    StartPoint = 0;
-                }
+
+
+            
             }
-
-
-
-
         }
     }
 }
+
