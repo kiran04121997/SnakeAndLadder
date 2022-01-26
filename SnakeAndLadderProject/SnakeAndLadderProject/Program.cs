@@ -13,7 +13,7 @@ namespace SnakeAndLadderProject
         {
             Console.WriteLine("welcome to snake ladder problem");
             SnakeAndLadder snake = new SnakeAndLadder();
-            snake.StartPlaying();
+            snake.playGame();
 
 
             Console.ReadLine();
