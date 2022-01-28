@@ -9,7 +9,7 @@ namespace SnakeAndLadderProject
     internal class SnakeAndLadder
     {
        
-            public const int NO_PLAY = 0, SNAKE = 1, LADDER = 2;
+            public const int NO_PLAY = 0, SNAKE = 2, LADDER = 1;
             public int StartPoint = 0;
             public int DiceRoll;
             int Option = 0;
