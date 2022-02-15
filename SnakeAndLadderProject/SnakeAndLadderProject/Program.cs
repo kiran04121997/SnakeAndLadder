@@ -11,10 +11,9 @@ namespace SnakeAndLadderProject
         const int POSITION = 0;
         static void Main(string[] args)
         {
-            Console.WriteLine("welcome to snake ladder problem");
-            Console.WriteLine("POSITION:" +POSITION);   
-        
-            
+             Console.WriteLine("Welcome to Snake and Ladder Simulator program \n");
+            SnakeAndLadder player = new SnakeAndLadder();
+            player.StartPosition();
             Console.ReadLine();
         }
     }
