@@ -11,13 +11,12 @@ namespace SnakeAndLadderProject
      
         static void Main(string[] args)
         {
-            Console.WriteLine("welcome to snake ladder problem");
-            SnakeAndLadder snake = new SnakeAndLadder();
-            snake.StartPlaying();
+             Console.WriteLine("Welcome to Snake and Ladder Simulator program \n");
+            SnakeAndLadder player = new SnakeAndLadder();
+            player.PlaySnakeAndLadder();
             
-
-
             Console.ReadLine();
+
         }
     }
 }
