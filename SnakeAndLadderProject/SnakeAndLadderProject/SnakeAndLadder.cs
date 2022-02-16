@@ -8,41 +8,47 @@ namespace SnakeAndLadderProject
 {
     internal class SnakeAndLadder
     {
-        public const int NO_PLAY = 0, SNAKE = 2, LADDER = 1, WINNING = 100;
-        public int StartPoint = 0;
-        public int DiceRoll;
-        int Option = 0;
-        public void StartPlaying()
+       public const int NO_PLAY = 0, LADDER = 1, SNAKE = 2, WINNING_POSITION = 100;
+        public int player_Position = 0, DiceRoll;
+        public void PlaySnakeAndLadder()
         {
-            while (this.StartPoint < 100)
+            Console.WriteLine("Game starts now...");
+            Console.WriteLine("Starting position of player is: " + player_Position);
+            Random random = new Random();
+
+            while(player_Position < WINNING_POSITION)
             {
-                Random Random = new Random();
-                DiceRoll = Random.Next(1, 7);
-                Console.WriteLine("player Roll  Dice number is:" + " " + DiceRoll);
-                Option = Random.Next(0, 3);
-                Console.WriteLine("Dice value:" + Option);
-              switch (Option)
+                DiceRoll = random.Next(1, 7);
+                Console.WriteLine("\n Player gets Dice Number: " + DiceRoll);
+
+                switch (random.Next(0, 3))
                 {
                     case NO_PLAY:
-                        Console.WriteLine("No Play");
+                        Console.WriteLine("(No Play) Player Position: " + player_Position);
+                        break;
+
+                    case LADDER:
+                        player_Position += DiceRoll;
+                        if (player_Position > WINNING_POSITION)
+                        {
+                            player_Position -= DiceRoll;
+                        }
+                        Console.WriteLine("(Ladder) Player Position: " + player_Position);
                         break;
                     case SNAKE:
-                        StartPoint += DiceRoll;
-                        Console.WriteLine("Got Ladder:" + StartPoint);
-                        break;
-                    case LADDER:
-                        StartPoint -= DiceRoll;
-                        Console.WriteLine("Snake Attack:" + StartPoint);
-                        break;
-                    default:
-                        Console.WriteLine("Invalid Option");
+                        player_Position -= DiceRoll;
+                        if (player_Position < 0)
+                        {
+                            player_Position = 0;
+                        }
+                        Console.WriteLine("(Snake) Player Position " + player_Position);
                         break;
                 }
 
-
-            
             }
+            Console.WriteLine("\n Congratulations you Won");
         }
+
     }
 }
 
